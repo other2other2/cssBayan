@@ -1,61 +1,79 @@
+html {
+    background: #f3f5ed;
+}
+
 body {
-    width: 900px;
+    width: 60%;
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
 }
 
 .meme {
-    margin: 10px 0;
+    margin: 1rem 0;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    /* width: 50%; */
+    height: 100%;
 }
 
 label {
     display: block;
     background: #5e8d76;
-    box-shadow: 5px 5px 0 0 #204637;
-    font-size: 20px;
-    padding: 20px;
+    box-shadow: 0.5rem 0.5rem 0 0 #204637;
+    font-size: 1.2rem;
+    padding: 1rem;
     position: relative;
-    transition: 0.5s;
+    transition: 0.2s;
+    cursor: pointer;
 }
-
-
 
 label::after {
     position: absolute;
-    right: 20px;
+    right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     content: '\002B';
     font-size: larger;
+    transition: 0.5s;
     
 }
 
-p {
+.content {
     visibility: hidden;
     overflow: hidden;
-    max-height: 0;
+    height: 0;
     margin: 0;
-    transition: 0.5s all ease-in;
+    transition: 0.3s all ease-in;
 }
 
 input {
     display: none;
+    
 }
 
-input:checked + label + p {
-    max-height: 10vh;
+input:checked + label + .content {
+    height: 30vw;
     visibility: visible;
 
 }
 
-input:hover + label + p {
-    max-height: 10vh;
+input:hover + label + .content {
+    height: 30vw;
+    visibility: visible;
+}
+
+.content:hover {
+    height: 30vw;
     visibility: visible;
 }
 
 input:checked + label::after {
     position: absolute;
-    right: 20px;
+    right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     content: '\0078';
@@ -64,7 +82,7 @@ input:checked + label::after {
 
 input:hover + label::after {
     position: absolute;
-    right: 20px;
+    right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     content: '\0078';
