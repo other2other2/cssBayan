@@ -23,23 +23,31 @@ img {
 label {
     display: block;
     background: #5e8d76;
-    box-shadow: 0.5rem 0.5rem 0 0 #204637;
+    /* box-shadow: 0.5rem 0.5rem 0 0 #204637; */
+    box-shadow: 0 0 0 0 #204637;
     font-size: 1.2rem;
     padding: 1rem;
     position: relative;
-    transition: 0.2s;
+    transition: 0.5s;
     cursor: pointer;
 }
 
+/* .memes:hover +  */
+.memes:hover label::after {
+    visibility: visible;
+    scale: 1;
+}
+
 label::after {
+    visibility: hidden;
     position: absolute;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
+    scale: 0.1;
     content: '\002B';
     font-size: larger;
-    transition: 0.5s;
-    
+    transition: 0.2s;
 }
 
 .content {
@@ -80,7 +88,7 @@ input:checked + label::after {
     font-size: larger;
 }
 
-input:hover + label::after {
+.meme:hover label::after {
     position: absolute;
     right: 1rem;
     top: 50%;
@@ -90,11 +98,11 @@ input:hover + label::after {
 }
 
 input:checked + label {
-    box-shadow: 0 0 0 0 #204637;
+    box-shadow: 0.5rem 0.5rem 0 0 #204637;
 }
 
 input:hover + label {
-    box-shadow: 0 0 0 0 #204637;
+    box-shadow: 0.5rem 0.5rem 0 0 #204637;
 }
 
 /* body {
