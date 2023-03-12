@@ -14,6 +14,7 @@ h2 {
     background: #5e8d76;
     box-shadow: 0 0 0 0 #204637;
     padding: 1rem;
+    margin: 0;
     position: relative;
     transition: 0.5s;
     cursor: pointer;
@@ -26,6 +27,7 @@ h2 {
 img {
     display: block;
     margin: 0 auto;
+    margin-top: 1.5rem;
     height: 100%;
     border-radius: 2%;
 }
@@ -114,16 +116,17 @@ input:checked + label h2::after {
         width: 80%;
         font-size: 0.8rem;
     }
+    
+    input:hover + label .content {
+        height: 0;
+        visibility: hidden;
+    }
 
     input:checked + label .content {
         height: 55vw;
         visibility: visible;
     }
     
-    input:hover + label .content {
-        height: 55vw;
-        visibility: visible;
-    }
 }
 
 @media (max-width: 320px) {
@@ -131,13 +134,13 @@ input:checked + label h2::after {
         width: 90%;
         font-size: 0.6rem;
     }
-
-    input:checked + label .content {
-        height: 60vw;
-        visibility: visible;
-    }
     
     input:hover + label .content {
+        height: 0;
+        visibility: hidden;
+    }
+
+    input:checked + label .content {
         height: 60vw;
         visibility: visible;
     }
